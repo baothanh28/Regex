@@ -1,0 +1,13 @@
+Experience of regex
+https://stackoverflow.com/questions/2503413/regular-expression-to-stop-at-first-match
+
+The other answers here fail to spell out a full solution for regex versions which don't support non-greedy matching. 
+The greedy quantifiers (.*?, .+? etc) are a Perl 5 extension which isn't supported in traditional regular expressions.
+
+If your stopping condition is a single character, the solution is easy; instead of
+a(.*?)b you can match  a[^ab]*b
+
+
+
+To match with a or b [ab]
+
